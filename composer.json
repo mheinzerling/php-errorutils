@@ -1,0 +1,22 @@
+{
+  "name": "mheinzerling/errorutils",
+  "description": "Wrap errors to exceptions",
+  "minimum-stability": "stable",
+  "licence": "MIT",
+  "authors": [
+    {
+      "name": "Martin Heinzerling",
+      "email": "webmaster@mheinzerling.de"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "mheinzerling": "src/"
+    }
+  }
+}
