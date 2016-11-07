@@ -6,10 +6,13 @@ This is a small library collects error handling methods
 
 ##Composer
     "require": {
-        "mheinzerling/errorutils": "2.0.*"
+        "mheinzerling/errorutils": "2.1.*"
     },
   
 ##Changelog
+
+### 2.1.0
+error mailer
 
 ### 2.0.0
 update to PHP 7
