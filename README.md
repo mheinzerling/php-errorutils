@@ -6,7 +6,7 @@ This is a small library collects error handling methods
 
 ##Composer
     "require": {
-        "mheinzerling/errorutils": "2.1.*"
+        "mheinzerling/errorutils": "^2.1.1"
     },
   
 ##Changelog
