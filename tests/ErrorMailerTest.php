@@ -1,9 +1,6 @@
 <?php
 
-namespace mheinzerling\commons;
-
-use mheinzerling\commons\error\ErrorMailer;
-use mheinzerling\commons\error\ProcessedThrowable;
+namespace mheinzerling\commons\error;
 
 class ErrorMailerTest extends \PHPUnit_Framework_TestCase
 {
