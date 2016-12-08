@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 namespace mheinzerling\commons\error;
 
 
@@ -14,9 +15,6 @@ class ProcessedThrowable extends \Exception
         $this->throwable = $throwable;
     }
 
-    /**
-     * @return \Throwable
-     */
     public function getThrowable(): \Throwable
     {
         return $this->throwable;

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace mheinzerling\commons\error;
 
@@ -25,7 +26,7 @@ class PhpExceptionTest extends \PHPUnit_Framework_TestCase
             static::assertEquals(__FILE__, $e->getFile());
             static::assertEquals(null, $e->getPrevious());
             static::assertEquals(E_USER_ERROR, $e->getCode());
-            static::assertEquals(21, $e->getLine());
+            static::assertEquals(22, $e->getLine());
             static::assertEquals([], $e->getContext());
         } finally {
             restore_error_handler();

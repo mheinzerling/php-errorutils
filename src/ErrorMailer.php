@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace mheinzerling\commons\error;
 
@@ -34,7 +35,7 @@ class ErrorMailer
      * @param callable|null $afterSendingError fulfil a last will before terminating the script
      * @return void
      */
-    public function call(callable $callback, callable $beforeSendingError = null, callable $afterSendingError = null) //:void
+    public function call(callable $callback, callable $beforeSendingError = null, callable $afterSendingError = null): void
     {
         try {
             $callback();
@@ -55,12 +56,7 @@ class ErrorMailer
         }
     }
 
-    /**
-     * @param \Throwable $throwable
-     * @param string $subject
-     * @return void
-     */
-    private function send(\Throwable $throwable, string $subject) //:void
+    private function send(\Throwable $throwable, string $subject): void
     {
         $message = $this->toMessage($throwable);
         if ($this->debug) {
@@ -76,7 +72,7 @@ class ErrorMailer
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    private function toMessage(\Throwable $throwable):string
+    private function toMessage(\Throwable $throwable): string
     {
         if ($throwable instanceof ProcessedThrowable) $throwable = $throwable->getThrowable();
         $message = "[" . $throwable->getCode() . "] " . $throwable->getMessage() . "\n";

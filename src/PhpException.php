@@ -1,14 +1,12 @@
 <?php
+declare(strict_types = 1);
 
 namespace mheinzerling\commons\error;
 
 
 class PhpException extends \Exception
 {
-    /**
-     * @return void
-     */
-    public static function register() //:void
+    public static function register(): void
     {
         error_reporting(E_ALL);
         set_error_handler(function (int $code, string $message, string $file = null, int $line = null, array $context = null) {
@@ -17,11 +15,11 @@ class PhpException extends \Exception
     }
 
     /**
-     * @var array|null
+     * @var ?array
      */
     private $context = null;
 
-    public function __construct(int $code, string $message, string $file = null, int $line = null, array $context = null)
+    public function __construct(int $code, string $message, ?string $file = null, ?int $line = null, ?array $context = null)
     {
         parent::__construct($message, $code);
 
@@ -30,19 +28,12 @@ class PhpException extends \Exception
         $this->setContext($context);
     }
 
-    /**
-     * @return array|null
-     */
-    public function getContext()
+    public function getContext():?array
     {
         return $this->context;
     }
 
-    /**
-     * @param array|null $context
-     * @return void
-     */
-    public function setContext(array $context = null) //:void
+    public function setContext(?array $context): void
     {
         $this->context = $context;
     }
